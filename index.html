@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FurniHaven — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FurniHaven</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container home-main">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Comfort & Style for Home & Office</h1>
+          <p>Quality furniture that fits your space and lifestyle.</p>
+          <a href="products.html" class="btn primary">Shop Now</a>
+        </div>
+        <img src="images/livingroom.jpg" alt="Living room" class="hero-img">
+      </div>
+    </section>
+
+    <!-- Some promo / info blocks (optional) -->
+    <section class="features">
+      <div class="feature-card">
+        <h3>Free Delivery</h3>
+        <p>Within Nairobi for qualifying orders</p>
+      </div>
+      <div class="feature-card">
+        <h3>Quality Craftsmanship</h3>
+        <p>Durable, stylish pieces built to last</p>
+      </div>
+      <div class="feature-card">
+        <h3>Easy Returns</h3>
+        <p>Hassle-free within 7 days</p>
+      </div>
+    </section>
+
+    <!-- Featured products at the BOTTOM of homepage -->
+    <section id="featured" class="products-section">
+      <h2>Featured Products</h2>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+    <div style="text-align:center; margin-top:16px;">
+      <a class="btn primary" href="products.html">View All Products</a>
+    </div>
+
+    <!-- Contact under featured products -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you. Reach us below:</p>
+      <p>
+        📞 <a href="tel:+254712345678">+254 712 345 678</a><br>
+        📧 <a href="mailto:furnihaven@gmail.com">furnihaven@gmail.com</a><br>
+        💬 <a href="https://wa.me/254712345678" target="_blank">WhatsApp Us</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> FurniHaven — All rights reserved</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // run product render on home (will populate the bottom featured products)
+    renderProductGrid();
+    updateCartCount();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

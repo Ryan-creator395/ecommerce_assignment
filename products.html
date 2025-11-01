@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">FurniHaven</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="container products-section">
+    <h2>Products</h2>
+
+          <!-- TEMP test image -->
+     <img src="images/chair.jpg" width="200">
+     <img src="images/sofa.jpg" width="500">
+     <img src="images/recliner.jpg" width="300">
+     <img src="images/desk.jpg" width="300">
+     <img src="images/bookshelf.jpg" width="500">
+     <img src="images/table.jpg" width="300">
+     <img src="images/bed.jpg" width="300">
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+<script>
+  renderProductGrid();
+  updateCartCount();
+</script>
+
+</body>
+</html>
+

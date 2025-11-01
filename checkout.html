@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FurniHaven — Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FurniHaven</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container checkout-page">
+    <h2 class="title">Checkout</h2>
+
+    <form id="checkoutForm" class="checkout-form" onsubmit="event.preventDefault(); completeOrder();">
+      <label>Full Name</label>
+      <input id="custName" type="text" required>
+
+      <label>Email</label>
+      <input id="custEmail" type="email" required>
+
+      <label>Phone</label>
+      <input id="custPhone" type="text" required>
+
+      <label>Delivery Address</label>
+      <input id="custAddress" type="text" required>
+
+      <h3>Payment Method</h3>
+      <label><input type="radio" name="pay" value="mpesa" checked> M-Pesa</label>
+      <label><input type="radio" name="pay" value="card"> Card</label>
+      <label><input type="radio" name="pay" value="cod"> Cash on Delivery</label>
+
+      <h3>Order Summary</h3>
+      <div id="orderSummary" class="order-summary"></div>
+
+      <button class="btn primary" type="submit">Confirm Order</button>
+
+      <div id="result" class="order-result" style="display:none;margin-top:16px;"></div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> FurniHaven</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    updateCartCount();
+    renderCheckoutSummary();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Basic order completion handler (keeps things local — good for prototype)
+    function completeOrder(){
+      const name = document.getElementById("custName").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const address = document.getElementById("custAddress").value.trim();
+      const payment = document.querySelector('input[name="pay"]:checked').value;
+
+      if(!name || !email || !phone || !address){
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      const total = cartTotal();
+      const box = document.getElementById("result");
+      box.style.display = "block";
+      box.innerHTML = `
+        <h3>Order Confirmed ✅</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Payment:</strong> ${payment.toUpperCase()}</p>
+        <p><strong>Total:</strong> KSh ${total}</p>
+        <p>Thank you for shopping with FurniHaven.</p>
+      `;
+
+      // clear cart
+      localStorage.removeItem("furnihaven_cart");
+      updateCartCount();
+      renderCheckoutSummary();
+    }
+  </script>
+</body>
+</html>

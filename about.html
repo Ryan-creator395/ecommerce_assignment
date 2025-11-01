@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — FurniHaven</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FurniHaven</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="title">About FurniHaven</h2>
+
+    <p><strong>FurniHaven</strong> sources stylish, comfortable and affordable furniture for homes and offices. Our mission is to make great design accessible — from ergonomic office chairs to cosy sofas and smart storage.</p>
+
+    <h3>Mission</h3>
+    <p>Deliver quality furniture with excellent service and local support.</p>
+
+    <h3>Values</h3>
+    <ul>
+      <li>Customer satisfaction</li>
+      <li>Quality craftsmanship</li>
+      <li>Transparency & fairness</li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> FurniHaven</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    updateCartCount();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

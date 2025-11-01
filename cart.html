@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FurniHaven — Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FurniHaven</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="title">Your Cart</h2>
+
+    <div id="cartContainer"></div>
+    <div id="cartSummary" class="cart-summary"></div>
+
+    <div class="cart-actions">
+      <a href="products.html" class="btn">Continue Shopping</a>
+      <a href="checkout.html" class="btn primary">Proceed to Checkout</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> FurniHaven</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    renderCartPage();
+    updateCartCount();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
