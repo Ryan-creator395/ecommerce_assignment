@@ -1,45 +1,52 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Products</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FurniHaven — Products</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo">FurniHaven</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FurniHaven</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <section class="container products-section">
-    <h2>Products</h2>
+  <main class="container products-page">
+    <h2>All Products</h2>
 
-          <!-- TEMP test image -->
-     <img src="images/chair.jpg" width="200">
-     <img src="images/sofa.jpg" width="500">
-     <img src="images/recliner.jpg" width="300">
-     <img src="images/desk.jpg" width="300">
-     <img src="images/bookshelf.jpg" width="500">
-     <img src="images/table.jpg" width="300">
-     <img src="images/bed.jpg" width="300">
+    <input class="search" placeholder="Search products..." id="searchInput"/>
+
     <div id="productGrid" class="product-grid"></div>
-  </section>
-</main>
+  </main>
 
-<script src="script.js"></script>
-<script>
-  renderProductGrid();
-  updateCartCount();
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> FurniHaven. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    renderProductGrid();
+    updateCartCount();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const search = document.getElementById("searchInput");
+    search.addEventListener("input", () => {
+      renderProductGrid(search.value.trim());
+    });
+  </script>
 
 </body>
 </html>
+
 

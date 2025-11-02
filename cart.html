@@ -12,36 +12,36 @@
       <div class="logo">FurniHaven</div>
       <nav class="main-nav">
         <a href="index.html">Home</a>
-        <a href="products.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        <a href="index.html#products">Shop</a>
       </nav>
+      <div class="header-actions">
+        <a class="cart-link" href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <h2 class="title">Your Cart</h2>
-
-    <div id="cartContainer"></div>
-    <div id="cartSummary" class="cart-summary"></div>
-
+  <main class="container cart-page">
+    <h1>Your Shopping Cart</h1>
+    <div id="cartContainer" aria-live="polite"></div>
+    <div class="cart-summary" id="cartSummary"></div>
     <div class="cart-actions">
-      <a href="products.html" class="btn">Continue Shopping</a>
-      <a href="checkout.html" class="btn primary">Proceed to Checkout</a>
+      <a class="btn" href="index.html">Continue Shopping</a>
+      <a class="btn primary" id="checkoutBtn" href="checkout.html">Proceed to Checkout</a>
     </div>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> FurniHaven</small>
+      <p>&copy; <span id="year"></span> FurniHaven. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
   <script>
-    renderCartPage();
     updateCartCount();
-    document.getElementById("year").textContent = new Date().getFullYear();
+    if (document.getElementById('cartContainer')) renderCartPage();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+

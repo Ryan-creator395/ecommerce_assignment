@@ -6,38 +6,73 @@
   <title>About — FurniHaven</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">FurniHaven</div>
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="products.html">Shop</a>
-        <a href="about.html">About</a>
         <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h2 class="title">About FurniHaven</h2>
+  <!-- MAIN -->
+  <main class="container about-page">
+    <h1>About FurniHaven</h1>
 
-    <p><strong>FurniHaven</strong> sources stylish, comfortable and affordable furniture for homes and offices. Our mission is to make great design accessible — from ergonomic office chairs to cosy sofas and smart storage.</p>
+    <p>
+      <strong>FurniHaven</strong> is a modern online furniture store dedicated to delivering stylish,
+      comfortable, and affordable furniture solutions for both homes and offices. We combine
+      contemporary design with superior craftsmanship to give you furniture that enhances your
+      spaces and supports your lifestyle.
+    </p>
 
-    <h3>Mission</h3>
-    <p>Deliver quality furniture with excellent service and local support.</p>
+    <h2>Our Mission</h2>
+    <p>
+      To provide high-quality, ergonomic, and aesthetic furniture products at competitive prices,
+      ensuring comfort, convenience, and exceptional customer experience.
+    </p>
 
-    <h3>Values</h3>
+    <h2>Why Choose Us?</h2>
     <ul>
-      <li>Customer satisfaction</li>
-      <li>Quality craftsmanship</li>
-      <li>Transparency & fairness</li>
+      <li>✅ Premium and affordable products</li>
+      <li>✅ Modern and ergonomic designs</li>
+      <li>✅ Convenient online shopping experience</li>
+      <li>✅ Reliable delivery and customer support</li>
+      <li>✅ Kenyan-based and quality guaranteed</li>
     </ul>
+
+    <h2>Our Values</h2>
+    <ul>
+      <li>✔ Customer Satisfaction</li>
+      <li>✔ Quality Craftsmanship</li>
+      <li>✔ Integrity and Transparency</li>
+      <li>✔ Innovation in Design</li>
+    </ul>
+
+    <h2>Our Story</h2>
+    <p>
+      Established to simplify the way people furnish their spaces, FurniHaven started with a
+      simple idea — to make great furniture accessible to everyone. Over time, we have grown from
+      a small startup to a trusted online furniture partner for homes, offices, and workplaces
+      across Kenya.
+    </p>
+
+    <br>
+    <a class="btn primary" href="products.html">Explore Our Products</a>
   </main>
 
-  <footer class="footer">
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> FurniHaven</small>
+      <p>&copy; <span id="year"></span> FurniHaven. All rights reserved.</p>
     </div>
   </footer>
 
@@ -46,5 +81,7 @@
     updateCartCount();
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
+
